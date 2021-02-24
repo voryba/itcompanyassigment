@@ -1,12 +1,13 @@
 package com.company.entities;
 
-public class EntryLevelEmployees extends Employees{
+public class MainEmployees extends Employees{
     private String position;
     private String project;
-    private static final String GROUP = "Entry Level Employees";
+    private static final String GROUP = "Management Employees";
 
-    public EntryLevelEmployees(String name, String hireDate, int salary, String position) {
+    public MainEmployees(String name, String hireDate, int salary, String position) {
         super(name, hireDate, salary);
+        setPosition(position);
     }
 
     public String getPosition() {
@@ -24,7 +25,7 @@ public class EntryLevelEmployees extends Employees{
 
     @Override
     public String toString() {
-        return "Entry Level Employee{" +
+        return "Main employee{" +
                 "name ='" + super.getName() + '\'' +
                 ", position ='" + position + '\'' +
                 ", project ='" + project + '\'' +

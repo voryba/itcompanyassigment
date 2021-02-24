@@ -18,7 +18,7 @@ public class ExecutiveEmployees extends Employees{
 
     @Override
     public String toString() {
-        return "Executive{" +
+        return "Executive employee{" +
                 "name ='" + super.getName() + '\'' +
                 ", position ='" + executivePosition + '\'' +
                 ", date of hire ='" + super.getHireDate() + '\'' +
