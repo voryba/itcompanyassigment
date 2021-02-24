@@ -1,13 +1,16 @@
 package com.company.entities;
 
+import java.time.LocalDate;
+
 public class MainEmployees extends Employees{
     private String position;
     private String project;
     private static final String GROUP = "Management Employees";
 
-    public MainEmployees(String name, String hireDate, int salary, String position) {
+    public MainEmployees(String name, LocalDate hireDate, int salary, String position, String project) {
         super(name, hireDate, salary);
         setPosition(position);
+        setProject(project);
     }
 
     public String getPosition() {
@@ -30,8 +33,8 @@ public class MainEmployees extends Employees{
                 ", position ='" + position + '\'' +
                 ", project ='" + project + '\'' +
                 ", date of hire ='" + super.getHireDate() + '\'' +
-                ", salary =" + super.getSalary() +
-                ", group =" + GROUP +
+                ", salary ='" + super.getSalary() + '\'' +
+                ", group = '" + GROUP + '\'' +
                 '}';
     }
 }

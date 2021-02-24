@@ -1,10 +1,12 @@
 package com.company.entities;
 
+import java.time.LocalDate;
+
 public class ExecutiveEmployees extends Employees{
     private String executivePosition;
     private static final String GROUP = "Executive Employees";
 
-    public ExecutiveEmployees(String name, String hireDate, int salary, String executivePosition) {
+    public ExecutiveEmployees(String name, LocalDate hireDate, int salary, String executivePosition) {
         super(name, hireDate, salary);
         setExecutivePosition(executivePosition);
     }
@@ -22,8 +24,8 @@ public class ExecutiveEmployees extends Employees{
                 "name ='" + super.getName() + '\'' +
                 ", position ='" + executivePosition + '\'' +
                 ", date of hire ='" + super.getHireDate() + '\'' +
-                ", salary =" + super.getSalary() +
-                ", group =" + GROUP +
+                ", salary =" + super.getSalary() + '\'' +
+                ", group =" + GROUP  + '\''+
                 '}';
     }
 }
