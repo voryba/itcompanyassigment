@@ -18,6 +18,6 @@ public class ManagementController {
     }
     public String getManagementByName(String name){
         List<ManagementEmployees> list = repo.getManagementEmployeeByName(name);
-        return (list.size() == 0 ? "Medicine was not found!" : list.toString());
+        return (list.size() == 0 ? "Employee was not found!" : list.toString());
     }
 }
