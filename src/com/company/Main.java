@@ -6,38 +6,58 @@ import com.company.controllers.MainEmployeesController;
 import com.company.controllers.ManagementController;
 import com.company.data.PostgresDB;
 import com.company.data.interfaces.IDB;
+import com.company.entities.EntryLevelEmployees;
+import com.company.entities.ExecutiveEmployees;
+import com.company.entities.MainEmployees;
 import com.company.repositories.EntryLevelRepository;
 import com.company.repositories.ExecutiveRep;
 import com.company.repositories.MainRepository;
 import com.company.repositories.ManagementRepository;
+
+import java.sql.Date;
 
 public class Main {
     public static void main(String[] args) {
         IDB db = new PostgresDB();
         // Uncomment to check code
 
-//         Entry level state employees
+//        <-- Entry level state employees -->
 //        EntryLevelRepository entryRep = new EntryLevelRepository(db);
 //        EntryLevelController controller = new EntryLevelController(entryRep);
 //        System.out.println(controller.getAllManagement());
 //        System.out.println(controller.getManagementByName("Lil Peep"));
 //        System.out.println(controller.getManagementByProfession("Junior dev."));
+//      ---------------------------------------------------------------------------
+//        EntryLevelEmployees example = new EntryLevelEmployees("Yerkhan", Date.valueOf("2022-03-15").toLocalDate(), 200000,"Junior dev.","Android app.");
+//        example.EntryProgrammerInfo();
 
-        // Main Level employees
+
+
+        // <-- Main Level employees -->
 //        MainRepository mainRep = new MainRepository(db);
 //        MainEmployeesController controller = new MainEmployeesController(mainRep);
 //        System.out.println(controller.getAllManagement());
 //        System.out.println(controller.getManagementByName("XXX Tentacion"));
 //        System.out.println(controller.getManagementByProfession("Middle dev."));
+//        ---------------------------------------------------------------------------
+//        MainEmployees example = new MainEmployees("Yerkhan", Date.valueOf("2022-03-15").toLocalDate(), 200000,"Junior dev.","Android app.");
+//        example.MainProgrammerInfo();
 
-        // Executive level employees
+
+
+        // <-- Executive level employees -->
 //        ExecutiveRep executiveRep = new ExecutiveRep(db);
 //        ExecutiveController controller = new ExecutiveController(executiveRep);
 //        System.out.println(controller.getAllManagement());
 //        System.out.println(controller.getManagementByName("Lil Pump"));
 //        System.out.println(controller.getManagementByProfession("CTO"));
+//        ---------------------------------------------------------------------------
+//        ExecutiveEmployees example = new ExecutiveEmployees("Yerkhan Sabyrov", Date.valueOf("2022-03-15").toLocalDate(), 200000, "CTO");
+//        example.ExecutiveInfo();
 
-        // Management
+
+
+        // <-- Management -->
 //        ManagementRepository repo = new ManagementRepository(db);
 //        ManagementController controller = new ManagementController(repo);
 //        System.out.println(controller.getAllManagement());
