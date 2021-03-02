@@ -1,7 +1,6 @@
 package com.company.repositories.interfaces;
 
 import com.company.entities.MainEmployees;
-import com.company.entities.ManagementEmployees;
 
 import java.util.List;
 

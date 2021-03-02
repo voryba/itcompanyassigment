@@ -1,8 +1,10 @@
 package com.company.entities;
 
+import com.company.entities.interfaces.IProgrammerMember;
+
 import java.time.LocalDate;
 
-public class MainEmployees extends Employees{
+public class MainEmployees extends Employees implements IProgrammerMember {
     private String position;
     private String project;
     private static final String GROUP = "Management Employees";
@@ -36,5 +38,20 @@ public class MainEmployees extends Employees{
                 ", salary ='" + super.getSalary() + '\'' +
                 ", group = '" + GROUP + '\'' +
                 '}';
+    }
+
+    @Override
+    public String work() {
+        return super.getName() + " works in IT company as " + getPosition() + ".";
+    }
+
+    @Override
+    public String salaryInfo() {
+        return super.getName() + " get salary " + getSalary() + "$ per month.";
+    }
+
+    @Override
+    public String programs() {
+        return super.getName() + " programs in " + GROUP + " department";
     }
 }

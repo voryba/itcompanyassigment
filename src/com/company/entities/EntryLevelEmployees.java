@@ -1,8 +1,10 @@
 package com.company.entities;
 
+import com.company.entities.interfaces.IProgrammerMember;
+
 import java.time.LocalDate;
 
-public class EntryLevelEmployees extends Employees{
+public class EntryLevelEmployees extends Employees implements IProgrammerMember {
     private String position;
     private String project;
     private static final String GROUP = "Entry Level Employees";
@@ -29,12 +31,27 @@ public class EntryLevelEmployees extends Employees{
     @Override
     public String toString() {
         return "Entry Level Employee{" +
-                "name ='" + super.getName() + '\'' +
-                ", position ='" + position + '\'' +
-                ", project ='" + project + '\'' +
-                ", date of hire ='" + super.getHireDate() + '\'' +
-                ", salary =" + super.getSalary() + '\'' +
-                ", group =" + GROUP  + '\''+
+                "name = '" + super.getName() + '\'' +
+                ", position = '" + position + '\'' +
+                ", project = '" + project + '\'' +
+                ", date of hire = '" + super.getHireDate() + '\'' +
+                ", salary = " + super.getSalary() + '\'' +
+                ", group = " + GROUP  + '\''+
                 '}';
+    }
+
+    @Override
+    public String work() {
+        return super.getName() + " works in IT company as" + getPosition() + ".";
+    }
+
+    @Override
+    public String salaryInfo() {
+        return super.getName() + " get salary " + getSalary() + "$ per month.";
+    }
+
+    @Override
+    public String programs() {
+        return super.getName() + " programs in " + GROUP + " department";
     }
 }

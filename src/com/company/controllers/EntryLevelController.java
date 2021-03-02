@@ -1,7 +1,6 @@
 package com.company.controllers;
 
 import com.company.entities.EntryLevelEmployees;
-import com.company.entities.ExecutiveEmployees;
 import com.company.repositories.interfaces.IEntryRep;
 
 import java.util.List;
