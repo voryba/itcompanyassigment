@@ -1,25 +1,22 @@
 package com.company;
 
-import com.company.controllers.EntryLevelController;
-import com.company.controllers.ExecutiveController;
-import com.company.controllers.MainEmployeesController;
-import com.company.controllers.ManagementController;
+import com.company.controllers.*;
 import com.company.data.PostgresDB;
 import com.company.data.interfaces.IDB;
-import com.company.entities.EntryLevelEmployees;
-import com.company.entities.ExecutiveEmployees;
-import com.company.entities.MainEmployees;
-import com.company.repositories.EntryLevelRepository;
-import com.company.repositories.ExecutiveRep;
-import com.company.repositories.MainRepository;
-import com.company.repositories.ManagementRepository;
-
-import java.sql.Date;
+import com.company.repositories.CompanyRepository;
 
 public class Main {
     public static void main(String[] args) {
         IDB db = new PostgresDB();
         // Uncomment to check code
+
+//        <-- Company Total cost -->
+//        CompanyRepository repo = new CompanyRepository(db);
+//        CompanyController controller = new CompanyController(repo);
+//        System.out.println(controller.getTotalCost());
+
+
+
 
 //        <-- Entry level state employees -->
 //        EntryLevelRepository entryRep = new EntryLevelRepository(db);

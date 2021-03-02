@@ -2,10 +2,10 @@ package com.company.controllers;
 
 import com.company.repositories.interfaces.ICompanyRep;
 
-public class CompanyRepository {
+public class CompanyController {
     private final ICompanyRep repo;
 
-    public CompanyRepository(ICompanyRep repo) {
+    public CompanyController(ICompanyRep repo) {
         this.repo = repo;
     }
 

@@ -1,20 +1,17 @@
 package com.company.repositories;
 
 import com.company.data.interfaces.IDB;
-import com.company.entities.EntryLevelEmployees;
 import com.company.repositories.interfaces.ICompanyRep;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.LinkedList;
-import java.util.List;
 
-public class companyRepository implements ICompanyRep {
+public class CompanyRepository implements ICompanyRep {
     private final IDB db;
 
-    public companyRepository(IDB db) {
+    public CompanyRepository(IDB db) {
         this.db = db;
     }
 
@@ -25,23 +22,32 @@ public class companyRepository implements ICompanyRep {
             String sql ="SELECT SUM(salary) FROM entrylevel";
             PreparedStatement st = con.prepareStatement(sql);
             ResultSet rs = st.executeQuery();
-            int sum_entry = rs.getInt("sum");
-
+            int sum_entry = -1;
+            if(rs.next()) {
+                sum_entry = rs.getInt("sum");
+            }
             sql ="SELECT SUM(salary) FROM main";
             st = con.prepareStatement(sql);
             rs = st.executeQuery();
-            int sum_main = rs.getInt("sum");
+            int sum_main = 0;
+            if(rs.next()){
+                sum_main = rs.getInt("sum");
+            }
 
             sql ="SELECT SUM(salary) FROM executive";
             st = con.prepareStatement(sql);
             rs = st.executeQuery();
-            int sum_executive = rs.getInt("sum");
-
+            int sum_executive = 0;
+            if(rs.next()) {
+                sum_executive = rs.getInt("sum");
+            }
             sql ="SELECT SUM(salary) FROM management";
             st = con.prepareStatement(sql);
             rs = st.executeQuery();
-            int sum_management = rs.getInt("sum");
-
+            int sum_management = 0;
+            if(rs.next()) {
+                sum_management = rs.getInt("sum");
+            }
             return sum_entry+sum_main+sum_executive+sum_management;
         } catch (Exception e){
             e.printStackTrace();
